@@ -1,21 +1,18 @@
 #!/usr/bin/env coffee
 
-# by Jakukyo Friel <weakish@gmail.com>
-# under Apache-v2
-
 # Usage:
 # encode text to weibo short url
 #
-#     echo 'abcdefg' | base64fy
+#     echo 'abcdefg' | weiboshurl
 #
 # decode
 #
-#     base64fy http://t.cn/8smtzVX
+#     weiboshurl http://t.cn/8smtzVX
 #
-# Since it can encode arbitrary text, including encrypted text:
+# It can encode arbitrary text, including encrypted text:
 #
-#     echo 'abcdefg' | gpg --yes -r `whoami` -e | base64fy
-#     base64fy http://t.cn/8smtzVX | gpg -d
+#     echo 'abcdefg' | gpg --yes -r `whoami` -e | weiboshurl
+#     weiboshurl http://t.cn/8smtzVX | gpg -d
 #
 # Due to the limit of weibo short url, this script cannot encode text
 # containing more than 1010 characters.
